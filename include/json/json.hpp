@@ -30,6 +30,7 @@ namespace json {
   static string csv(ojson records) {
     std::ostringstream buffer;
     vector<string> headers;
+    if (records.size() == 0) return "";
     auto first = records[0];
     for (const auto& kv : first.object_range())
       headers.push_back(kv.key());
